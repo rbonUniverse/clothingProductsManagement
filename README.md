@@ -28,11 +28,11 @@ Or, Register as new user
 <br />
 - React
 <br />
-- Express
+- MongoDB
 <br />
 - Axios
 <br />
-- MongoDB
+- Express
 <br />
 - HTML
 <br />
