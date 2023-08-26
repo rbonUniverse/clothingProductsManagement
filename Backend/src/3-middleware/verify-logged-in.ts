@@ -11,7 +11,7 @@ async function verifyLoggedIn(
 
   const isValid = await auth.verifyToken(authHeader);
   if (!isValid) {
-    next(new UnauthorizedError("You are not logged in"));
+    next(console.log(new UnauthorizedError("You are not logged in!!!")));
     return;
   }
 

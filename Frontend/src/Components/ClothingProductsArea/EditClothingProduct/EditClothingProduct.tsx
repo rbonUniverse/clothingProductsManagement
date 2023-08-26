@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import "./EditClothingProduct.css";
 
 function EditClothingProduct(): JSX.Element {
-  
+  // Verify that user is Admin
   useVerifyAdmin();
 
   const params = useParams();
@@ -34,10 +34,7 @@ function EditClothingProduct(): JSX.Element {
 
   async function send(product: ProductModel) {
     try {
-      const ppp = await productsService.updateProduct(product);
-      console.log("ppp");
-      console.log(ppp);
-      console.log("ppp");
+      await productsService.updateProduct(product);
       notifyService.success("Clothing Product has been updated");
       navigate("/clothing-products");
     } catch (err: any) {

@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { authStore } from "../Redux/AuthState";
 import { useEffect } from "react";
 
-function useVerifyAdmin() {
+function useVerifyUserLoggedIn() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!authStore.getState().token) {
-      notifyService.error("You are not Admin!!!");
+    if (!authStore.getState().user) {
+      notifyService.error("You are not Logged in!!!");
 
       //send user to login page
       navigate("/clothing-products/login");
@@ -16,4 +16,4 @@ function useVerifyAdmin() {
   }, []);
 }
 
-export default useVerifyAdmin;
+export default useVerifyUserLoggedIn;
