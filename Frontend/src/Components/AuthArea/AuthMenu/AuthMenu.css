@@ -1,0 +1,20 @@
+
+.AuthMenu .adminNav {
+    display: flex;
+    justify-content: right;
+    margin: 0px 60px 0px 205px;
+}
+
+.AuthMenu a{
+    text-decoration: none;
+    padding: 10px;
+    border-color: transparent;
+    font-size: medium;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: 0.1px solid gray;
+    margin: 0px 0px 0px 25px;
+    color: #035c7e;
+    border-radius: 25px;
+}

@@ -1,0 +1,53 @@
+.EditClothingProduct {
+    width: 350px;
+    height: 630px;
+    margin: auto;
+    margin: 1% 37%;
+    text-align: left;
+    border: 1px solid #3eb9e6;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #3eb9e6;
+}
+
+.EditClothingProduct .edit-clothing-fields {
+    margin-top: 25px;
+}
+
+.EditClothingProduct>form>h2 {
+    width: 100%;
+    padding: 5px;
+    font-size: 35px;
+    margin: -1% -5%;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+}
+
+.EditClothingProduct>form>Button {
+    width: 40%;
+    height: 35px;
+    padding: 5px;
+    border-color: transparent;
+    font-size: larger;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-size: medium;
+    align-items: center;
+    margin: 15% 5% 5% 5%;
+    background-color: #035c7e;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+.EditClothingProduct .brand,
+.EditClothingProduct .clothingType,
+.EditClothingProduct .price,
+.EditClothingProduct .material {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
