@@ -21,8 +21,7 @@
 <br>
 Enter as User - username: JohnDo, password: 098890
 <br/>
-<br>
-Or, Register as ne user
+Or, Register as new user
 <br/>
 <h2># Technologies used</h2>
 - Node.js
