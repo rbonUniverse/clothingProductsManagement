@@ -26,15 +26,9 @@ export function ProductsReducer(
   action: ProductsAction
 ): ProductsState {
   const newState = { ...currentState };
-//   console.log("newState");
-//   console.log(newState);
-//   console.log("newState");
   switch (action.type) {
     case ProductsActionType.FetchProducts:
       newState.products = action.payload;
-    //   console.log("ProductsActionType");
-    //   console.log(newState.products);
-    //   console.log("ProductsActionType");
       break;
 
     case ProductsActionType.AddProduct:
@@ -43,9 +37,11 @@ export function ProductsReducer(
 
     case ProductsActionType.UpdateProduct:
       const indexToUpdate = newState.products.findIndex((p) => p._id === action.payload._id);
+      
       if (indexToUpdate >= 0) {
         newState.products[indexToUpdate] = action.payload;
       }
+      
       break;
 
     case ProductsActionType.DeleteProduct:

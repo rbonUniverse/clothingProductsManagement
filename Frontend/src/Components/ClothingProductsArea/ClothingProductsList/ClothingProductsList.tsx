@@ -1,9 +1,9 @@
 import ClothingProductsCard from "../ClothingProductCard/ClothingProductCard";
 import clothingProductsService from "../../../Services/ProductsServices";
 import notifyService from "../../../Services/NotifyService";
+import useVerifyUserLoggedIn from "../../../Utils/useVerifyUserLoggedIn";
 import ProductModel from "../../../Models/ProductModel";
 import Loading from "../../SharedArea/Loading/Loading";
-import { authStore } from "../../../Redux/AuthState";
 import Header from "../../LayoutArea/Header/Header";
 import { Box, Pagination } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -11,6 +11,9 @@ import { useSelector } from "react-redux";
 import "./ClothingProductsList.css";
 
 function ClothingProductsList(): JSX.Element {
+  // Verify that user is Logged in
+  useVerifyUserLoggedIn();
+
   const [productsLength, setProductsLength] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
   const pageSize = 10;
@@ -21,7 +24,6 @@ function ClothingProductsList(): JSX.Element {
 
   // Access products from Redux state
   const reduxProducts = useSelector((state: any) => state.products);
-//   const token = authStore.getState().token;
   
   useEffect(() => {
     // Get products from server:

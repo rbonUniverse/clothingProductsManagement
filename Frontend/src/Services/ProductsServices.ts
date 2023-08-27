@@ -11,10 +11,7 @@ class ProductsService {
   public async getAllProducts(): Promise<ProductModel[]> {
     // Take products resides in redux global state:
     let products = productsStore.getState().products;
-    console.log("Products Services");
-    console.log(products);
-    console.log("Products Services");
-    
+
     // If there no products in global state - fetch them from server:
     if (products.length === 0) {
       // Fetch all products from axios response:
@@ -75,16 +72,12 @@ class ProductsService {
   // Update product:
   public async updateProduct(product: ProductModel): Promise<void> {
     // Update and send to backend:
-    const response = await axios.put<ProductModel>(`http://localhost:3001/api/clothing-products/update/${product._id}`, product);
-    console.log("Response");
-    console.log(response);
-    console.log("Response");
-    
+    const response = await axios.put<ProductModel>(
+      `http://localhost:3001/api/clothing-products/update/${product._id}`,
+      product
+    );
     const updatedProduct: ProductModel = response.data;
-
-    console.log("Updated Product");
-    console.log(updatedProduct);
-    console.log("Updated Product");
+        
     // Send updated product to redux global state:
     const action: ProductsAction = {
       type: ProductsActionType.UpdateProduct,

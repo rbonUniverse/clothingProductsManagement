@@ -10,13 +10,9 @@
     }
 
     .FaUserAlt {
-        font-size: 50px;
         margin: auto;
+        font-size: 50px;
         margin: 5.5% 37%;
-    }
-
-    .Login label {
-        color: #33290c;
     }
 
     .Login .username {
@@ -54,7 +50,7 @@
         margin: 5% -5%;
         text-align: center;
         box-sizing: border-box;
-        color: white;
+        color: whitesmoke;
     }
 
     .Login .FaUserAlt {
@@ -62,7 +58,7 @@
         margin-bottom: -45px;
         font-size: 85px;
         text-align: center;
-        color: white;
+        color: whitesmoke;
     }
 
     .Login>span {
