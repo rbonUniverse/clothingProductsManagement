@@ -36,7 +36,7 @@ function ClothingProductCard(props: ProductCardProps): JSX.Element {
       if (!iAmSure) return;
 
       await productsService.deleteProduct(props.product._id!);
-      notifyService.success("Product has been deleted");
+      notifyService.success("Product has been deleted !!!");
       navigate("/clothing-products");
     } catch (err: any) {
       notifyService.error(err);

@@ -72,16 +72,15 @@ class ProductsService {
   // Update product:
   public async updateProduct(product: ProductModel): Promise<void> {
     // Update and send to backend:
-    const response = await axios.put<ProductModel>(
+    await axios.put<ProductModel>(
       `http://localhost:3001/api/clothing-products/update/${product._id}`,
       product
     );
-    const updatedProduct: ProductModel = response.data;
         
     // Send updated product to redux global state:
     const action: ProductsAction = {
       type: ProductsActionType.UpdateProduct,
-      payload: updatedProduct,
+      payload: product,
     };
     // Call productsReducer to perform this action.
     productsStore.dispatch(action);
@@ -95,7 +94,7 @@ class ProductsService {
     // Delete this product in redux global state:
     const action: ProductsAction = {
       type: ProductsActionType.DeleteProduct,
-      payload: _id,
+      payload: {_id},
     };
     // Call Product reducer to perform this action
     productsStore.dispatch(action);

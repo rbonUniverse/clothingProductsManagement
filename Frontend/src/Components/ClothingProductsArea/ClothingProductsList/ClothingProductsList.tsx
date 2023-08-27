@@ -9,6 +9,7 @@ import { Box, Pagination } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import "./ClothingProductsList.css";
+import { productsStore } from "../../../Redux/ClothingProductsState";
 
 function ClothingProductsList(): JSX.Element {
   // Verify that user is Logged in
@@ -24,18 +25,14 @@ function ClothingProductsList(): JSX.Element {
 
   // Access products from Redux state
   const reduxProducts = useSelector((state: any) => state.products);
-  
-  useEffect(() => {
-    // Get products from server:
+
+  const getProducts = () => {
     clothingProductsService
       .getAllProducts()
       .then((products: any) => {
         setProductsLength(products.length);
         setPaginatedProducts(
-            products.slice(
-            (pageNumber - 1) * pageSize,
-            pageSize * pageNumber
-          )
+          products.slice((pageNumber - 1) * pageSize, pageSize * pageNumber)
         );
       })
       .catch((err: any) => {
@@ -44,6 +41,17 @@ function ClothingProductsList(): JSX.Element {
       .finally(() => {
         setLoading(false);
       });
+  };
+  useEffect(() => {
+    // Get products from server:
+    getProducts();
+
+    const unsubscribe = productsStore.subscribe(() => {
+      getProducts();
+    });
+
+    // Return a function which will be called when component is about to be destroyed:
+    return () => unsubscribe();
   }, []);
 
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {

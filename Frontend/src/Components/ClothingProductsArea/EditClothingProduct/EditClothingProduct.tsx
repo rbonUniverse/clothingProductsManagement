@@ -35,7 +35,7 @@ function EditClothingProduct(): JSX.Element {
   async function send(product: ProductModel) {
     try {
       await productsService.updateProduct(product);
-      notifyService.success("Clothing Product has been updated");
+      notifyService.success("Clothing Product has been updated !!!");
       navigate("/clothing-products");
     } catch (err: any) {
       notifyService.error(err);
