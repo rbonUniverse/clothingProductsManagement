@@ -11,6 +11,7 @@ dal.connect();
 const server = express();
 
 server.use(cors());
+server.use(express.static('./Frontend/build'))
 // Tell express to read the body json object:
 server.use(express.json());
 // Rout any request to the server into controller:
