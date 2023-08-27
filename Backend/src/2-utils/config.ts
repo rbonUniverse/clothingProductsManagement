@@ -1,5 +1,5 @@
 class Config {
-    public connectionString = "mongodb://127.0.0.1:27017/webShopOnlineDB";
+    public connectionString = "mongodb+srv://robbyzigi:h2xeZ4j3Rk7YfKjw@cluster0.leibbh1.mongodb.net/?retryWrites=true&w=majority";
     public port = 3001;
 }
 
