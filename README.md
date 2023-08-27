@@ -23,7 +23,7 @@ Enter as User - username: JohnDo, password: 098890
 <br/>
 Or, Register as new user
 <br/>
-10. Database is on cloud
+10. Database is on mongoDB Atlas cloud
 <br />
 <h2># Technologies used</h2>
 - Node.js
